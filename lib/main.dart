@@ -1,59 +1,35 @@
-import 'package:jobhunt/screens/splash.dart';
-import 'package:jobhunt/services/firebaseUserProvider.dart';
+import 'dart:io';
+
+import 'package:businesscard/prof.dart';
+import 'package:businesscard/splash.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:wiredash/wiredash.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-
-void main() => runApp(MultiProvider(providers: [
-      ChangeNotifierProvider<FirebaseUserProvider>(
-          create: (context) => FirebaseUserProvider()),
-           
-    
-    ], child: MyApp()));
-
-class MyApp extends StatefulWidget {
-  MyApp({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyAppState createState() => _MyAppState();
+void main() {
+  runApp(MyApp());
 }
 
-class _MyAppState extends State<MyApp> {
-    final _navigatorKey = GlobalKey<NavigatorState>();
-  bool isBuyer = true;
+class MyApp extends StatefulWidget {
   @override
-  void initState() {
-    // TODO: implement initState
-    Provider.of<FirebaseUserProvider>(context, listen: false)
-        .user; //initialising firebaseuserprovider
+  _MyApp createState() => _MyApp();
+}
+
+class _MyApp extends State<MyApp> {
+  @override
+  initState() {
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-     return Wiredash(
-      navigatorKey: _navigatorKey,
-      projectId: "demo_show_app-rxf5lpp",
-      secret: "p6ju8f33970ly93ipzhwvcnqxsia03bw",
-     // translation: MyTranslation(),
-      theme: WiredashThemeData(
-        primaryColor: Colors.cyan[800],
-        secondaryColor: Colors.cyan,
-        dividerColor: Colors.black,
-        primaryBackgroundColor: Colors.cyan[100],
-      ),
-    child : MaterialApp(
-      navigatorKey: _navigatorKey,
-      title: 'Food App',
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-     /* darkTheme: ThemeData(
-          brightness: Brightness.dark, primarySwatch: Colors.deepOrange),*/
-
-      home: SplashScreen(),
-      
-      ) );
+      title: 'Docket Card',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: ProfilePage(),
+    );
   }
 }
