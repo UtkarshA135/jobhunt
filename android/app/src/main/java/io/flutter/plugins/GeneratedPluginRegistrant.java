@@ -15,15 +15,37 @@ import io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry;
 public final class GeneratedPluginRegistrant {
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
-    flutterEngine.getPlugins().add(new com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin());
-      io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin.registerWith(shimPluginRegistry.registrarFor("io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin"));
-    flutterEngine.getPlugins().add(new io.github.ponnamkarthik.toast.fluttertoast.FlutterToastPlugin());
-    flutterEngine.getPlugins().add(new vn.hunghd.flutter.plugins.imagecropper.ImageCropperPlugin());
+      io.agora.agorartcengine.AgoraRtcEnginePlugin.registerWith(shimPluginRegistry.registrarFor("io.agora.agorartcengine.AgoraRtcEnginePlugin"));
+      app.alan.alan_voice.AlanVoicePlugin.registerWith(shimPluginRegistry.registrarFor("app.alan.alan_voice.AlanVoicePlugin"));
+    flutterEngine.getPlugins().add(new de.mintware.barcode_scan.BarcodeScanPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.cloudfirestore.CloudFirestorePlugin());
+    flutterEngine.getPlugins().add(new com.mr.flutter.plugin.filepicker.FilePickerPlugin());
+      io.flutter.plugins.firebaseauth.FirebaseAuthPlugin.registerWith(shimPluginRegistry.registrarFor("io.flutter.plugins.firebaseauth.FirebaseAuthPlugin"));
+    flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.core.FirebaseCorePlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.database.FirebaseDatabasePlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.firebasemessaging.FirebaseMessagingPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.storage.FirebaseStoragePlugin());
+      com.alveliu.flutterfullpdfviewer.FlutterFullPdfViewerPlugin.registerWith(shimPluginRegistry.registrarFor("com.alveliu.flutterfullpdfviewer.FlutterFullPdfViewerPlugin"));
+    flutterEngine.getPlugins().add(new io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin());
+      com.example.fluttershare.FlutterSharePlugin.registerWith(shimPluginRegistry.registrarFor("com.example.fluttershare.FlutterSharePlugin"));
+      de.gigadroid.flutterudid.FlutterUdidPlugin.registerWith(shimPluginRegistry.registrarFor("de.gigadroid.flutterudid.FlutterUdidPlugin"));
+      io.github.ponnamkarthik.toast.fluttertoast.FluttertoastPlugin.registerWith(shimPluginRegistry.registrarFor("io.github.ponnamkarthik.toast.fluttertoast.FluttertoastPlugin"));
+      com.aloisdeniel.geocoder.GeocoderPlugin.registerWith(shimPluginRegistry.registrarFor("com.aloisdeniel.geocoder.GeocoderPlugin"));
+    flutterEngine.getPlugins().add(new com.baseflow.geolocator.GeolocatorPlugin());
+    flutterEngine.getPlugins().add(new com.baseflow.googleapiavailability.GoogleApiAvailabilityPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.googlesignin.GoogleSignInPlugin());
     flutterEngine.getPlugins().add(new io.flutter.plugins.imagepicker.ImagePickerPlugin());
-    flutterEngine.getPlugins().add(new com.crazecoder.openfile.OpenFilePlugin());
+    flutterEngine.getPlugins().add(new com.lyokone.location.LocationPlugin());
+    flutterEngine.getPlugins().add(new com.baseflow.location_permissions.LocationPermissionsPlugin());
+    flutterEngine.getPlugins().add(new com.vitanov.multiimagepicker.MultiImagePickerPlugin());
+      com.javih.multimediapicker.MultiMediaPickerPlugin.registerWith(shimPluginRegistry.registrarFor("com.javih.multimediapicker.MultiMediaPickerPlugin"));
+    flutterEngine.getPlugins().add(new io.flutter.plugins.packageinfo.PackageInfoPlugin());
     flutterEngine.getPlugins().add(new io.flutter.plugins.pathprovider.PathProviderPlugin());
     flutterEngine.getPlugins().add(new com.baseflow.permissionhandler.PermissionHandlerPlugin());
-    flutterEngine.getPlugins().add(new net.nfet.flutter.printing.PrintingPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin());
+      com.az.upi_india.UpiIndiaPlugin.registerWith(shimPluginRegistry.registrarFor("com.az.upi_india.UpiIndiaPlugin"));
     flutterEngine.getPlugins().add(new io.flutter.plugins.urllauncher.UrlLauncherPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.videoplayer.VideoPlayerPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.webviewflutter.WebViewFlutterPlugin());
   }
 }
