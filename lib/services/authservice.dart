@@ -1,9 +1,7 @@
-import 'package:jobhunt/screens/homescreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:jobhunt/screens/homescreen.dart';
 import 'package:jobhunt/screens/loginscreen.dart';
-
 class AuthService {
   //Handles Auth
   handleAuth() {
@@ -13,21 +11,14 @@ class AuthService {
           if (snapshot.hasData) {
             return HomeScreen();
           } else {
-            return LoginScreen();
+            return LoginPage();
           }
         });
   }
 
   //Sign out
- Future signOut() async {
-   await FirebaseAuth.instance.signOut();
-  }
-
-  //Save to device
-  Future<void> savePhoneNumber(String phno) async{
-    SharedPreferences prefs=await SharedPreferences.getInstance();
-    prefs.setString('Phone Number', phno);
-    
+  signOut() {
+    FirebaseAuth.instance.signOut();
   }
 
   //SignIn
@@ -40,6 +31,4 @@ class AuthService {
         verificationId: verId, smsCode: smsCode);
     signIn(authCreds);
   }
-
-
 }

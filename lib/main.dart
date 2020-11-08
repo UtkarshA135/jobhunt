@@ -1,6 +1,10 @@
+import 'package:jobhunt/providers/providerRegistration.dart';
+import 'package:jobhunt/screens/homescreen.dart';
 import 'package:jobhunt/screens/splash.dart';
+import 'package:jobhunt/services/authservice.dart';
 import 'package:jobhunt/services/firebaseUserProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:jobhunt/services/jobinfoprovider.dart';
 import 'package:provider/provider.dart';
 import 'package:wiredash/wiredash.dart';
 
@@ -8,6 +12,8 @@ import 'package:wiredash/wiredash.dart';
 void main() => runApp(MultiProvider(providers: [
       ChangeNotifierProvider<FirebaseUserProvider>(
           create: (context) => FirebaseUserProvider()),
+             ChangeNotifierProvider<SellerDetailsProvider>(
+          create: (context) => SellerDetailsProvider()),
            
     
     ], child: MyApp()));
@@ -52,7 +58,7 @@ class _MyAppState extends State<MyApp> {
      /* darkTheme: ThemeData(
           brightness: Brightness.dark, primarySwatch: Colors.deepOrange),*/
 
-      home: SplashScreen(),
+      home: AuthService().handleAuth()
       
       ) );
   }

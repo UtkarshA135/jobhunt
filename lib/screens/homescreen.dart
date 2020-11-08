@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<String> _getUserType() async {
+   
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String _userType = prefs.getString('User Type');
     print(_userType);
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-
+print("hello");
     _getUserType().then((_type) {
       setState(() {
         this.userType = _type;
@@ -42,9 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
       if (_type == 'Seeker')
         Navigator.pushReplacement(context,
             new MaterialPageRoute(builder: (context) => SeekerRegistration()));
-      else if (_type == 'Job Provider') {
+      else if (_type == 'Provider') {
         Navigator.pushReplacement(context,
-            new MaterialPageRoute(builder: (context) => JobProviderRegistration()));
+            new MaterialPageRoute(builder: (context) => SellerRegisterPage()));
       }
     });
 
@@ -96,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Divider(),
                     Center(
                         child: menuButton('assets/jp.jpg',
-                            'Job Provider', JobProviderRegistration()
+                            'Provider', SellerRegisterPage()
                             //SellerHomePage(),
                             )),
                   ])
